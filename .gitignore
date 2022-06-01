@@ -15,16 +15,9 @@ pytorch-xla-env-setup.py
 /input
 /notebooks/setup_kaggle.ipynb
 *.h5
-/notebooks/nb001t-token-classifier/*
-!/notebooks/nb001t-token-classifier/.gitkeep
-/notebooks/nb002i-token-classifier/*
-!/notebooks/nb002i-token-classifier/.gitkeep
-/src/001t-token-classifier/*
-!/src/001t-token-classifier/.gitkeep
-/nb001t-token-classifier_v5/
-/wandb/
-/notebooks/nb001t-token-classifier-xsmall/*
-!/notebooks/nb001t-token-classifier-xsmall/.gitkeep
+#/notebooks/nb001t-token-classifier/*
+#!/notebooks/nb001t-token-classifier/.gitkeep
+/wandb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
