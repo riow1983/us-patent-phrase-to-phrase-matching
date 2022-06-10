@@ -67,7 +67,7 @@ if KAGGLE_ENV:
     OUTPUT_DIR = Path('')
 else:
     !mkdir nb001
-    OUTPUT_DIR = Path('./nb001/')
+    OUTPUT_DIR = INPUT_DIR / 'nb001'
 
 # hoge_path = OUTPUT_DIR / 'hoge.csv'
 ```
@@ -183,9 +183,11 @@ if __name__ == "__main__":
 |----|----|----|----|
 <br>
 
-#### Hugging Face Platform
+#### Hugging Face
 |name|url|status|comment|
 |----|----|----|----|
+|Demo: U.S. Patent Phrase to Phrase Matching|[URL](https://huggingface.co/spaces/jungealexander/uspppm-demo)|Done|本コンペのデータセットを使ったデモ<br>モデルにはAI-Growth-Lab/PatentSBERTaが使われている|
+|Value error : sentencepiece|[URL](https://discuss.huggingface.co/t/value-error-sentencepiece/4313)|Done|`pip install sentencepiece`で解決|
 <br>
 
 #### Colab Notebook
