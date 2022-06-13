@@ -10,7 +10,7 @@ https://www.kaggle.com/competitions/us-patent-phrase-to-phrase-matching<br>
 <br>
 ***
 ## 実験管理テーブル
-https://wandb.ai/riow1983/NBME-Public?workspace=user-riow1983
+https://wandb.ai/riow1983/us-patent-phrase-to-phrase-matching?workspace=user-riow1983
 |commitSHA|comment|Local CV|Public LB|
 |----|----|----|----|
 <br>
