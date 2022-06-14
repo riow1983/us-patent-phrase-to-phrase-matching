@@ -16,7 +16,7 @@ https://wandb.ai/riow1983/us-patent-phrase-to-phrase-matching?workspace=user-rio
 |872b1baad828122be1863753abcd5c010cf346fa|nb004/exp001;<br>one sentence to residual net w/ normal CV|0.84|0.8185|
 |0501852ad4baf36948d390c67419adeccdf1cdbb|nb005/exp001;<br>two sentences w/ normal CV|0.85|0.8342|
 |4a0c38371653c1c5b36bdc14898875511eae23b6|nb005/exp002;<br>two sentences w/ Closing gap CV|0.80|0.8314|
-|338ac18388f5d9e22a8a836afb1b5fd2d985e3ca|nb005/exp003;<br>AWP added|0.8225|-|
+|338ac18388f5d9e22a8a836afb1b5fd2d985e3ca|nb005/exp003;<br>AWP added|0.8225|0.8383|
 <br>
 
 ## Late Submissions
