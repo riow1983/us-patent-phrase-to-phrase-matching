@@ -161,6 +161,19 @@ if __name__ == "__main__":
 ```
 <br>
 
+```bash
+# 新しいブランチexp003を作成する
+!git branch exp003
+
+# ブランチを切り替える
+!git checkout exp003
+
+# ブランチを切り替えたのち, 特定のfileだけ過去バージョンに戻す
+#!git log ./notebooks/hoge.ipynb
+!git checkout {COMMIT SHA} ./notebooks/hoge.ipynb
+```
+<br>
+
 
 #### Papers
 |name|url|status|comment|
