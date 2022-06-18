@@ -19,6 +19,7 @@ https://wandb.ai/riow1983/us-patent-phrase-to-phrase-matching?workspace=user-rio
 |338ac18388f5d9e22a8a836afb1b5fd2d985e3ca|nb005/exp003;<br>AWP added|0.8225|0.8383|
 |b386a092e11d0bc91154b5958e76e4a56bbb6b56|nb005/exp004;<br>attention replaced w/ TFH|0.8125|0.8342|
 |956e0083714cc52e0b343238ebeda9dbb65c679f|nb005/exp005;<br>TFH as weight|0.61925|-|
+|0cbcef604fb14e4b8f8efc2658cbd47da4c40ea7|nb005/exp003.001;<br>aug data added|0.79|0.8257|
 <br>
 
 ## Late Submissions
