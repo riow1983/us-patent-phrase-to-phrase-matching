@@ -237,19 +237,30 @@ if __name__ == "__main__":
 ***
 ## Diary
 
-#### 2022-05-31  
+#### 2022-05-12
+コンペ参戦. 最初のkagglenbを作成.<br>
 <br>
+<br>
+
+#### 2022-05-31 
+コンペ用レポジトリ作成, Initial commit. <br>
 <br>
 <br>
 
 #### 2022-06-20
-結果はxxx/xxxだった. <br>
+結果は740/1975 (暫定) だった. <br>
 ![private lb image](https://github.com/riow1983/us-patent-phrase-to-phrase-matching/blob/main/png/result.png)
 <br>
 <br>
 **どのように取り組み, 何を反省しているか**<br>
+コンペ開催期間の中盤から参戦し, 実質１ヶ月程度のコミットとなった. EDAもそこそこに, ナイーブベイズモデルによる簡易モデル作成で遊ぶなどして時間を浪費してしまった. その後は[Nakamaさんの公開ノートブック](https://www.kaggle.com/competitions/us-patent-phrase-to-phrase-matching/discussion/314489)をフォークし, ベースラインモデル (DeBERTa Large V3) として実験開始. 実験管理用レポジトリ (本レポジトリ) もそのタイミングで作成した.<br>
+実験管理は, W&Bによるloss, score等のチャートの確認, CV scoreとLB scoreのREADMEへの記録 (実験管理テーブル), それら記録の結果から次の手の考案をissueに書く, 実装したらissueに関連づけ, 終わったものはissueクローズする, 次の手の実装において必要ならbranchを切り, 旧バージョンに戻してから実装を追加する, といった流れで自分史上最も整合的に行うことができた.<br>
+なお, 実験管理を整合的に行えるようになって改めて見えてきた課題としては, 次の手が明確になっても実行が直列的になっていて待機時間が長かったことが改善点として挙げられる. Colab Pro+の同時セッション数は確か4つだったと思うので, issueごとにbranchを切り, 同名の{train}.ipynbを最大4つまで同時に実行するといったことをやりたいが, データストレージ (Google Drive) が1つである以上, そういったことが上手く出来るのかはっきりしない. 別のbranchにcheckoutするとGoogle Drive内のfileも更新されるが, 例えば初めbranch1に居て, {train}.ipynb@branch1をColab上で実行した後, その実行中にローカルでbranch1からbranch2にcheckoutし, {train}.ipynb@branch2を実行する, ということが上手くいくのだろうか? 同名のfileが別々に更新されてしまうので, Google Drive側が対応できないと私は思っている.<br>
+この部分, チームを組めば, データストレージもメンバーごとに別個になるので, メンバーごとにbranchを切れば問題なく{train}.ipynbを同時実行でき, 並列化処理が捗る. ここがチームマージの最大の利点であり, チームマージのデメリット (一人当たりのsubmission回数の低減) を大きく上回るメリットのように思える.<br>
 <br>
-**xxxについて**<br>
+**My submissions について**<br>
+CPCバグをfixしない方がPrivate LBが良かった...<br>
+![my submissions image](https://github.com/riow1983/us-patent-phrase-to-phrase-matching/blob/main/png/mysubmissions.png)
 <br>
 **xxxについて**<br>
 <br>
