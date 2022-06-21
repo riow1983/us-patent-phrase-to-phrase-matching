@@ -19,6 +19,9 @@ https://wandb.ai/riow1983/us-patent-phrase-to-phrase-matching?workspace=user-rio
 |338ac18388f5d9e22a8a836afb1b5fd2d985e3ca|nb005/exp003;<br>AWP added|0.8225|0.8383|
 |b386a092e11d0bc91154b5958e76e4a56bbb6b56|nb005/exp004;<br>attention replaced w/ TFH|0.8125|0.8342|
 |956e0083714cc52e0b343238ebeda9dbb65c679f|nb005/exp005;<br>TFH as weight|0.61925|-|
+|0cbcef604fb14e4b8f8efc2658cbd47da4c40ea7|nb005/exp003.001;<br>aug data added|0.79|0.8257|
+|c6d00daebf4babcc8a2029100178bc3911c4cecb|nb005/exp003.002;<br>aug removed and 10 folds added|0.823|0.8390|
+|f6be59c4d8c0bcbcf901e057c2461196f3063458|nb005/exp003.002.001;<br>aug removed and 10 folds added w/ CPC bug fixed|0.821|0.8391|
 <br>
 
 ## Late Submissions
@@ -161,6 +164,19 @@ if __name__ == "__main__":
 ```
 <br>
 
+```bash
+# 新しいブランチexp003を作成する
+!git branch exp003
+
+# ブランチを切り替える
+!git checkout exp003
+
+# ブランチを切り替えたのち, 特定のfileだけ過去バージョンに戻す
+#!git log ./notebooks/hoge.ipynb
+!git checkout {COMMIT SHA} ./notebooks/hoge.ipynb
+```
+<br>
+
 
 #### Papers
 |name|url|status|comment|
@@ -221,19 +237,30 @@ if __name__ == "__main__":
 ***
 ## Diary
 
-#### 2022-05-31  
+#### 2022-05-12
+コンペ参戦. 最初のkagglenbを作成.<br>
 <br>
+<br>
+
+#### 2022-05-31 
+コンペ用レポジトリ作成, Initial commit. <br>
 <br>
 <br>
 
 #### 2022-06-20
-結果はxxx/xxxだった. <br>
+結果は740/1975 (暫定) だった. <br>
 ![private lb image](https://github.com/riow1983/us-patent-phrase-to-phrase-matching/blob/main/png/result.png)
 <br>
 <br>
 **どのように取り組み, 何を反省しているか**<br>
+コンペ開催期間の中盤から参戦し, 実質１ヶ月程度のコミットとなった. EDAもそこそこに, ナイーブベイズモデルによる簡易モデル作成で遊ぶなどして時間を浪費してしまった. その後は[Nakamaさんの公開ノートブック](https://www.kaggle.com/competitions/us-patent-phrase-to-phrase-matching/discussion/314489)をフォークし, ベースラインモデル (DeBERTa Large V3) として実験開始. 実験管理用レポジトリ (本レポジトリ) もそのタイミングで作成した.<br>
+実験管理は, W&Bによるloss, score等のチャートの確認, CV scoreとLB scoreのREADMEへの記録 (実験管理テーブル), それら記録の結果から次の手の考案をissueに書く, 実装したらissueに関連づけ, 終わったものはissueクローズする, 次の手の実装において必要ならbranchを切り, 旧バージョンに戻してから実装を追加する, といった流れで自分史上最も整合的に行うことができた.<br>
+なお, 実験管理を整合的に行えるようになって改めて見えてきた課題としては, 次の手が明確になっても実行が直列的になっていて待機時間が長かったことが改善点として挙げられる. Colab Pro+の同時セッション数は確か4つだったと思うので, issueごとにbranchを切り, 同名の{train}.ipynbを最大4つまで同時に実行するといったことをやりたいが, データストレージ (Google Drive) が1つである以上, そういったことが上手く出来るのかはっきりしない. 別のbranchにcheckoutするとGoogle Drive内のfileも更新されるが, 例えば初めbranch1に居て, {train}.ipynb@branch1をColab上で実行した後, その実行中にローカルでbranch1からbranch2にcheckoutし, {train}.ipynb@branch2を実行する, ということが上手くいくのだろうか? 同名のfileが別々に更新されてしまうので, Google Drive側が対応できないと私は思っている.<br>
+この部分, チームを組めば, データストレージもメンバーごとに別個になるので, メンバーごとにbranchを切れば問題なく{train}.ipynbを同時実行でき, 並列化処理が捗る. ここがチームマージの最大の利点であり, チームマージのデメリット (一人当たりのsubmission回数の低減) を大きく上回るメリットのように思える.<br>
 <br>
-**xxxについて**<br>
+**My submissions について**<br>
+CPCバグをfixしない方がPrivate LBが良かった...<br>
+![my submissions image](https://github.com/riow1983/us-patent-phrase-to-phrase-matching/blob/main/png/mysubmissions.png)
 <br>
 **xxxについて**<br>
 <br>
