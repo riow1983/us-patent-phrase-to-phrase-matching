@@ -27,6 +27,7 @@ https://wandb.ai/riow1983/us-patent-phrase-to-phrase-matching?workspace=user-rio
 ## Late Submissions
 |commitSHA|comment|Local CV|Private LB|Public LB|
 |----|----|----|----|----|
+|10e64df143aa0ed706f69a96583a8b299f6437cd|nb005@late001;<br>longer inputs inspired by 11th solution<br>Failed to obtain reasonable results due to issue #11|-|-|-|
 <br>
 
 
